@@ -140,7 +140,7 @@ window/bar:
           border-radius: 5px;
           cursor: pointer;
 
-          &.focused {
+          &.displayed {
             &:after { content:" 󰄛" };
           }
 
