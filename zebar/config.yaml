@@ -156,7 +156,7 @@ window/bar:
 
           &.focused,
           &:hover {
-            background: rgb(75 115 255 / 50%);
+            color: var(--Yellow);
           }
         }
       providers: ['glazewm']
