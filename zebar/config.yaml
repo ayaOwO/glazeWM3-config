@@ -142,9 +142,9 @@ window/bar:
           background: rgb(255 255 255 / 5%);
           margin-right: 4px;
           padding: 4px 8px;
-          color: rgb(255 255 255 / 90%);
+          color: inherit;
           border: none;
-          border-radius: 2px;
+          border-radius: 5px;
           cursor: pointer;
 
           &.displayed {
