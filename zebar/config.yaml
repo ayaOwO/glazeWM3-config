@@ -126,12 +126,6 @@ window/bar:
       display: flex;
       align-items: center;
 
-    template/logo:
-      styles: |
-        color: var(--Pink);
-      template: |
-        <i class="nf nf-md-cat"></i>
-
     template/glazewm_workspaces:
       styles: |
         display: flex;
