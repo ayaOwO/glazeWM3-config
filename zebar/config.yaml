@@ -257,30 +257,6 @@ window/bar:
           <span>{{ Math.round(cpu.usage) }}%</span>
         }
 
-    template/battery:
-      providers: ['battery']
-      styles: |
-        position: relative;
-
-        .charging-icon {
-          position: absolute;
-          font-size: 11px;
-          left: 7px;
-          top: 2px;
-        }
-      template: |
-        <!-- Show icon for whether battery is charging. -->
-        @if (battery.isCharging) {<i class="nf nf-md-power_plug charging-icon"></i>}
-
-        <!-- Show icon for how much of the battery is charged. -->
-        @if (battery.chargePercent > 90) {<i class="nf nf-fa-battery_4"></i>}
-        @else if (battery.chargePercent > 70) {<i class="nf nf-fa-battery_3"></i>}
-        @else if (battery.chargePercent > 40) {<i class="nf nf-fa-battery_2"></i>}
-        @else if (battery.chargePercent > 20) {<i class="nf nf-fa-battery_1"></i>}
-        @else {<i class="nf nf-fa-battery_0"></i>}
-
-        {{ Math.round(battery.chargePercent) }}%
-
     template/weather:
       providers: ['weather']
       template: |
