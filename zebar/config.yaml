@@ -150,6 +150,10 @@ window/bar:
             background: rgb(255 255 255 / 15%);
           }
 
+          &.focused {
+            &:after { content:" \f302" };
+          }
+
           &.focused,
           &:hover {
             background: rgb(75 115 255 / 50%);
