@@ -118,8 +118,7 @@ window/bar:
 
 
     i {
-      color: rgb(115 130 175 / 95%);
-      margin-right: 7px;
+      margin-right: 8px;
     }
 
   group/left:
