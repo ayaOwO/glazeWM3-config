@@ -140,10 +140,6 @@ window/bar:
           border-radius: 5px;
           cursor: pointer;
 
-          &.displayed {
-            background: rgb(255 255 255 / 15%);
-          }
-
           &.focused {
             &:after { content:" \f302" };
           }
