@@ -31,16 +31,6 @@ window/bar:
   # nesting, we can also target nested elements (e.g. below we set the
   # color and margin-right of icons).
   styles: |
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
-    height: 100%;
-    color: rgb(255 255 255 / 90%);
-    font-family: ui-monospace, monospace;
-    font-size: 12px;
-    padding: 4px 24px;
-    border-bottom: 1px solid rgb(255 255 255 / 5%);;
-    background: linear-gradient(rgb(0 0 0 / 90%), rgb(5 2 20 / 85%));
     --Rosewater: #f4dbd6;
 
     --Flamingo: #f0c6c6;
@@ -116,7 +106,17 @@ window/bar:
       
 
     --Crust: #181926;
-    }
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    height: 100%;
+    color: rgb(255 255 255 / 90%);
+    font-family: ui-monospace, monospace;
+    font-size: 12px;
+    padding: 4px 24px;
+    border-bottom: 1px solid var(--Red);
+    background: linear-gradient(rgb(0 0 0 / 90%), rgb(5 2 20 / 85%));
+
 
     i {
       color: rgb(115 130 175 / 95%);
