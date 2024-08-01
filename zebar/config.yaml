@@ -41,184 +41,81 @@ window/bar:
     padding: 4px 24px;
     border-bottom: 1px solid rgb(255 255 255 / 5%);;
     background: linear-gradient(rgb(0 0 0 / 90%), rgb(5 2 20 / 85%));
-    @property --Rosewater {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #f4dbd6;
-    }
+    --Rosewater: #f4dbd6;
 
-    @property --Flamingo {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #f0c6c6;
-    }
+    --Flamingo: #f0c6c6;
       
 
-    @property --Pink {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #f5bde6;
-    }
+    --Pink: #f5bde6;
+    
+
+    --Mauve: #c6a0f6;
+    
+
+    --Red: #ed8796;
+    
+
+    --Maroon: #ee99a0;
+    
+
+    --Peach: #f5a97f;
+    
+
+    --Yellow: #eed49f;
+    
+
+    --Green: #a6da95;
+    
+
+    --Teal: #8bd5ca;
+    
+
+    --Sky: #91d7e3;
+    
+
+    --Sapphire: #7dc4e4;
+    
+
+    --Blue: #8aadf4;
+    
+
+    --Lavender: #b7bdf8;
+    
+
+    --Text: #cad3f5;
       
 
-    @property --Mauve {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #c6a0f6;
-    }
+    --Subtext-1: #b8c0e0;
       
 
-    @property --Red {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #ed8796;
-    }
+    --Subtext-0: #a5adcb;
       
 
-    @property --Maroon {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #ee99a0;
-    }
+    --Overlay-2: #939ab7;
       
 
-    @property --Peach {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #f5a97f;
-    }
+    --Overlay-1: #8087a2;
       
 
-    @property --Yellow {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #eed49f;
-    }
+    --Overlay-0: #6e738d;
       
 
-    @property --Green {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #a6da95;
-    }
+    --Surface-2: #5b6078;
       
 
-    @property --Teal {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #8bd5ca;
-    }
+    --Surface-1: #494d64;
       
 
-    @property --Sky {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #91d7e3;
-    }
+    --Surface-0: #363a4f;
       
 
-    @property --Sapphire {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #7dc4e4;
-    }
+    --Base: #24273a;
       
 
-    @property --Blue {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #8aadf4;
-    }
+    --Mantle: #1e2030;
       
 
-    @property --Lavender {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #b7bdf8;
-    }
-      
-
-    @property --Text {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #cad3f5;
-    }
-      
-
-    @property --Subtext-1 {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #b8c0e0;
-    }
-      
-
-    @property --Subtext-0 {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #a5adcb;
-    }
-      
-
-    @property --Overlay-2 {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #939ab7;
-    }
-      
-
-    @property --Overlay-1 {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #8087a2;
-    }
-      
-
-    @property --Overlay-0 {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #6e738d;
-    }
-      
-
-    @property --Surface-2 {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #5b6078;
-    }
-      
-
-    @property --Surface-1 {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #494d64;
-    }
-      
-
-    @property --Surface-0 {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #363a4f;
-    }
-      
-
-    @property --Base {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #24273a;
-    }
-      
-
-    @property --Mantle {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #1e2030;
-    }
-      
-
-    @property --Crust {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: #181926;
+    --Crust: #181926;
     }
 
     i {
