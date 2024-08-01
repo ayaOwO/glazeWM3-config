@@ -146,7 +146,7 @@ window/bar:
 
           &.focused,
           &:hover {
-            color: var(--Yellow);
+            color: var(--Pink);
           }
         }
       providers: ['glazewm']
