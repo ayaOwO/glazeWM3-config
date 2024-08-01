@@ -8,13 +8,13 @@
 window/bar:
   providers: ['self']
   # Width of the window in physical pixels.
-  width: '{{ self.args.MONITOR_WIDTH }}'
+  width: '{{ self.args.MONITOR_WIDTH - 20}}'
   # Height of the window in physical pixels.
   height: '40'
   # X-position of the window in physical pixels.
-  position_x: '{{ self.args.MONITOR_X }}'
+  position_x: '{{ self.args.MONITOR_X  + 10}}'
   # Y-position of the window in physical pixels.
-  position_y: '{{ self.args.MONITOR_Y }}'
+  position_y: '{{ self.args.MONITOR_Y + 10}}'
   # Whether to show the window above/below all others.
   # Allowed values: 'always_on_top', 'always_on_bottom', 'normal'.
   z_order: 'normal'
