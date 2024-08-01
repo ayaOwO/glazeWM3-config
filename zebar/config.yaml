@@ -141,7 +141,7 @@ window/bar:
           cursor: pointer;
 
           &.focused {
-            &:after { content:" \f302" };
+            &:after { content:" 󰄛" };
           }
 
           &.focused,
