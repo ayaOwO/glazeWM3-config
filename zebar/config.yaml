@@ -167,6 +167,7 @@ window/bar:
   group/center:
     styles: |
       justify-self: center;
+      color: var(--Mauve);
 
     template/clock:
       providers: ['date']
@@ -188,12 +189,12 @@ window/bar:
       styles: |
         .binding-mode,
         .tiling-direction {
-          background: rgb(255 255 255 / 15%);
-          color: rgb(255 255 255 / 90%);
+          background: var(--Surface-1);
           border-radius: 2px;
           padding: 4px 6px;
           margin: 0;
         }
+        color: var(--Maroon);
 
       template: |
         @for (bindingMode of glazewm.bindingModes) {
@@ -210,6 +211,10 @@ window/bar:
 
     template/network:
       providers: ['network']
+      styles: | 
+        i {
+          color: var(--Yellow);
+        }
       template: |
         <!-- Show icon based on signal strength. -->
         @if (network.defaultInterface?.type === 'ethernet') {
@@ -227,6 +232,10 @@ window/bar:
 
     template/memory:
       providers: ['memory']
+      styles: |
+        i {
+          color: var(--Green);
+        }
       template: |
         <i class="nf nf-fae-chip"></i>
         {{ Math.round(memory.usage) }}%
@@ -235,7 +244,10 @@ window/bar:
       providers: ['cpu']
       styles: |
         .high-usage {
-          color: #900029;
+          color: var(--Red);
+        }
+        i {
+          color: var(--Teal)
         }
       template: |
         <i class="nf nf-oct-cpu"></i>
@@ -248,6 +260,10 @@ window/bar:
         }
 
     template/weather:
+      styles: |
+        i {
+          color: var(--Sky);
+        }
       providers: ['weather']
       template: |
         @switch (weather.status) {
