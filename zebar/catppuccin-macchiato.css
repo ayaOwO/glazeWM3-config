@@ -1,103 +1,179 @@
-.Rosewater {
-    color: #f4dbd6
+@property --Rosewater {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #f4dbd6;
 }
 
-.Flamingo {
-    color: #f0c6c6
+@property --Flamingo {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #f0c6c6;
 }
+	
 
-.Pink {
-    color: #f5bde6
+@property --Pink {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #f5bde6;
 }
+	
 
-.Mauve {
-    color: #c6a0f6
+@property --Mauve {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #c6a0f6;
 }
+	
 
-.Red {
-    color: #ed8796
+@property --Red {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #ed8796;
 }
+	
 
-.Maroon {
-    color: #ee99a0
+@property --Maroon {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #ee99a0;
 }
+	
 
-.Peach {
-    color: #f5a97f
+@property --Peach {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #f5a97f;
 }
+	
 
-.Yellow {
-    color: #eed49f
+@property --Yellow {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #eed49f;
 }
+	
 
-.Green {
-    color: #a6da95
+@property --Green {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #a6da95;
 }
+	
 
-.Teal {
-    color: #8bd5ca
+@property --Teal {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #8bd5ca;
 }
+	
 
-.Sky {
-    color: #91d7e3
+@property --Sky {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #91d7e3;
 }
+	
 
-.Sapphire {
-    color: #7dc4e4
+@property --Sapphire {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #7dc4e4;
 }
+	
 
-.Blue {
-    color: #8aadf4
+@property --Blue {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #8aadf4;
 }
+	
 
-.Lavender {
-    color: #b7bdf8
+@property --Lavender {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #b7bdf8;
 }
+	
 
-.Text {
-    color: #cad3f5
+@property --Text {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #cad3f5;
 }
+	
 
-.Subtext_1 {
-    color: #b8c0e0
+@property --Subtext-1 {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #b8c0e0;
 }
+	
 
-.Subtext_0 {
-    color: #a5adcb
+@property --Subtext-0 {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #a5adcb;
 }
+	
 
-.Overlay_2 {
-    color: #939ab7
+@property --Overlay-2 {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #939ab7;
 }
+	
 
-.Overlay_1 {
-    color: #8087a2
+@property --Overlay-1 {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #8087a2;
 }
+	
 
-.Overlay_0 {
-    color: #6e738d
+@property --Overlay-0 {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #6e738d;
 }
+	
 
-.Surface_2 {
-    color: #5b6078
+@property --Surface-2 {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #5b6078;
 }
+	
 
-.Surface_1 {
-    color: #494d64
+@property --Surface-1 {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #494d64;
 }
+	
 
-.Surface_0 {
-    color: #363a4f
+@property --Surface-0 {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #363a4f;
 }
+	
 
-.Base {
-    color: #24273a
+@property --Base {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #24273a;
 }
+	
 
-.Mantle {
-    color: #1e2030
+@property --Mantle {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #1e2030;
 }
+	
 
-.Crust {
-    color: #181926
+@property --Crust {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #181926;
 }
