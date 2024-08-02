@@ -4,6 +4,7 @@
     initial-value: #f4dbd6;
 }
 
+
 @property --Flamingo {
     syntax: "<color>";
     inherits: false;
