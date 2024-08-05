@@ -1,7 +1,7 @@
 general:
   # Commands to run when the WM has started (e.g. to run a script or launch
   # another application). Here we are running a batch script to start Zebar.
-  startup_commands: ['shell-exec --command %userprofile%/.glzr/zebar/start.bat']
+  startup_commands: ['shell-exec %userprofile%/.glzr/zebar/start.bat']
 
   # Whether to automatically focus windows underneath the cursor.
   focus_follows_cursor: true
@@ -197,7 +197,7 @@ keybindings:
   # Launch CMD terminal. Alternatively, use `shell-exec --command wt` or
   # `shell-exec --command %ProgramFiles%/Git/git-bash.exe` to start Windows
   # Terminal and Git Bash respectively.
-  - commands: ['shell-exec --command cmd']
+  - commands: ['shell-exec cmd']
     bindings: ['alt+enter']
 
   # Focus the next/previous workspace defined in `workspaces` config.
