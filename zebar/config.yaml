@@ -112,7 +112,7 @@ window/bar:
     align-items: center;
     height: 100%;
     color: var(--Text);
-    font-family: NerdFontsSymbols Nerd Font, ui-monospace, monospace;
+    font-family: FantasqueSansM Nerd Font;
     font-size: 16px;
     padding: 0 8px;
     background: linear-gradient(var(--Base), var(--Surface-0));
