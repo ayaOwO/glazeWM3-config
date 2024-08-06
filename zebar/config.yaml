@@ -170,7 +170,7 @@ window/bar:
       providers: ['glazewm']
       template: |
         @if ( glazewm.focusedContainer.type === 'window') {
-          <span class="current-window"> {{ glazewm.focusedContainer.title.substring(glazewm.focusedContainer.title.lastIndexOf((glazewm.focusedContainer.title.match(/[–—-]/g) ?? ['-']).findLast((e) => e)) + 1) }} </span>
+          <span class="current-window"> {{ glazewm.focusedContainer.title }} </span>
         } @else {
           <span class="current-window"></span>
         }
