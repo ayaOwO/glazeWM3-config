@@ -127,6 +127,9 @@ window/bar:
     styles: |
       display: flex;
       align-items: center;
+      .template {
+        margin-right: 16px;
+      }
 
     template/glazewm_workspaces:
       styles: |
@@ -192,7 +195,7 @@ window/bar:
       display: flex;
 
       .template {
-        margin-left: 20px;
+        margin-left: 16px;
       }
 
     template/glazewm_other:
