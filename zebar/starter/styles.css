@@ -3,16 +3,16 @@
  * Ref https://www.nerdfonts.com/cheat-sheet for a cheatsheet of available Nerdfonts icons.
  */
 @import 'https://www.nerdfonts.com/assets/css/webfont.css';
+@import url('https://unpkg.com/@catppuccin/palette/css/catppuccin.css');
 
 i {
-  color: rgb(115 130 175 / 95%);
   margin-right: 7px;
 }
 
 body {
-  color: rgb(255 255 255 / 90%);
-  font-family: ui-monospace, monospace;
-  font-size: 12px;
+  color: var(--ctp-macchiato-text);
+  font-family: FantasqueSansM Nerd Font;
+  font-size: 16px;
   overflow: hidden;
 }
 
@@ -23,8 +23,8 @@ body,
 }
 
 #root {
-  border-bottom: 1px solid rgb(255 255 255 / 5%);
-  background: linear-gradient(rgb(0 0 0 / 90%), rgb(5 2 20 / 85%));
+  background: linear-gradient(var(--ctp-macchiato-base), var(--ctp-macchiato-surface0));
+  border-radius: 10px;
 }
 
 .app {
@@ -32,7 +32,7 @@ body,
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   height: 100%;
-  padding: 4px 1.5vw;
+  padding: 4px 8px;
 }
 
 .left,
@@ -44,13 +44,13 @@ body,
 
 .center {
   justify-self: center;
+  color: var(--ctp-macchiato-mauve)
 }
 
 .right {
   justify-self: end;
 }
 
-.logo,
 .binding-mode,
 .tiling-direction,
 .network,
@@ -66,28 +66,32 @@ body,
 }
 
 .workspace {
-  background: rgb(255 255 255 / 5%);
+  background: var(--ctp-macchiato-surface1);
   margin-right: 4px;
   padding: 4px 8px;
-  color: rgb(255 255 255 / 90%);
+  color: inherit;
   border: none;
   border-radius: 2px;
   cursor: pointer;
 
   &.displayed {
-    background: rgb(255 255 255 / 15%);
+    &:after {
+      content: " 󰄛"
+    }
+
+    ;
   }
 
   &.focused,
   &:hover {
-    background: rgb(75 115 255 / 50%);
+    color: var(--ctp-macchiato-pink);
   }
 }
 
 .binding-mode,
 .tiling-direction {
-  background: rgb(255 255 255 / 15%);
-  color: rgb(255 255 255 / 90%);
+  background: var(--ctp-macchiato-surface1);
+  color: var(--ctp-macchiato-red);
   border-radius: 2px;
   line-height: 1;
   padding: 4px 8px;
@@ -99,8 +103,24 @@ body,
   margin-right: 4px;
 }
 
+.network {
+  color: var(--ctp-macchiato-peach);
+}
+
+.memory {
+  color: var(--ctp-macchiato-yellow);
+}
+
+.cpu {
+  color: var(--ctp-macchiato-green);
+}
+
+.weather {
+  color: var(--ctp-macchiato-sapphire);
+}
+
 .cpu .high-usage {
-  color: #900029;
+  color: var(--ctp-macchiato-red);
 }
 
 .battery {
