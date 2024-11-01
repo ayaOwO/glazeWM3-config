@@ -2,7 +2,7 @@
   "$schema": "https://github.com/glzr-io/zebar/raw/v2.4.0/resources/settings-schema.json",
   "startupConfigs": [
     {
-      "path": "catppuccin/with-glazewm.zebar.json",
+      "path": "catppuccin/catppuccin-glazewm.zebar.json",
       "preset": "default"
     }
   ]
