@@ -1,0 +1,135 @@
+/**
+ * Import the Nerdfonts icon font.
+ * Ref https://www.nerdfonts.com/cheat-sheet for a cheatsheet of available Nerdfonts icons.
+ */
+@import 'https://www.nerdfonts.com/assets/css/webfont.css';
+@import url('https://unpkg.com/@catppuccin/palette/css/catppuccin.css');
+
+i {
+  margin-right: 7px;
+}
+
+body {
+  color: var(--ctp-macchiato-text);
+  font-family: FantasqueSansM Nerd Font;
+  font-size: 16px;
+  overflow: hidden;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+#root {
+  background: linear-gradient(var(--ctp-macchiato-base), var(--ctp-macchiato-surface0));
+  border-radius: 10px;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  height: 100%;
+  padding: 4px 8px;
+}
+
+.left,
+.center,
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.center {
+  justify-self: center;
+  color: var(--ctp-macchiato-mauve)
+}
+
+.right {
+  justify-self: end;
+}
+
+.binding-mode,
+.tiling-direction,
+.network,
+.memory,
+.cpu,
+.battery {
+  margin-right: 20px;
+}
+
+.workspaces {
+  display: flex;
+  align-items: center;
+}
+
+.workspace {
+  background: var(--ctp-macchiato-surface1);
+  margin-right: 4px;
+  padding: 4px 8px;
+  color: inherit;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+
+  &.displayed {
+    &:after {
+      content: " 󰄛"
+    }
+
+    ;
+  }
+
+  &.focused,
+  &:hover {
+    color: var(--ctp-macchiato-pink);
+  }
+}
+
+.binding-mode,
+.tiling-direction {
+  background: var(--ctp-macchiato-surface1);
+  color: var(--ctp-macchiato-red);
+  border-radius: 2px;
+  line-height: 1;
+  padding: 4px 8px;
+  border: 0;
+  cursor: pointer;
+}
+
+.binding-mode {
+  margin-right: 4px;
+}
+
+.network {
+  color: var(--ctp-macchiato-peach);
+}
+
+.memory {
+  color: var(--ctp-macchiato-yellow);
+}
+
+.cpu {
+  color: var(--ctp-macchiato-green);
+}
+
+.weather {
+  color: var(--ctp-macchiato-sapphire);
+}
+
+.cpu .high-usage {
+  color: var(--ctp-macchiato-red);
+}
+
+.battery {
+  position: relative;
+}
+
+.battery .charging-icon {
+  position: absolute;
+  font-size: 7px;
+  left: -8px;
+  top: 3px;
+}
