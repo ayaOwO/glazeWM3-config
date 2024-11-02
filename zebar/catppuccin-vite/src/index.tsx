@@ -197,7 +197,6 @@ function App() {
             ))}
           </div>
         )}
-        <button onClick={handleThemeSwitcher}>change theme</button>
       </div>
 
       <div class="flex items-center justify-self-center text-ctp-mauve">{output.date?.formatted}</div>
@@ -268,10 +267,10 @@ function App() {
         )} */}
 
         {output.weather && (
-          <div class="weather text-ctp-sapphire">
+          <button class="weather text-ctp-sapphire" onclick={handleThemeSwitcher}>
             {getWeatherIcon(output.weather)}
             {Math.round(output.weather.celsiusTemp)}°C
-          </div>
+          </button>
         )}
       </div>
     </div>
