@@ -3,14 +3,16 @@
  * Ref https://www.nerdfonts.com/cheat-sheet for a cheatsheet of available Nerdfonts icons.
  */
 @import './assets/css/webfont.css';
-@import './themes/macchiato.css';
+/* @import './themes/macchiato.css'; */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 i {
   margin-right: 7px;
 }
 
 body {
-  color: var(--text);
   font-family: FantasqueSansM Nerd Font;
   font-size: 16px;
   overflow: hidden;
@@ -18,37 +20,9 @@ body {
 
 html,
 body,
-#root {
+#root
+{
   height: 100%;
-}
-
-#root {
-  background: linear-gradient(var(--base), var(--surface0));
-  border-radius: 10px;
-}
-
-.app {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
-  height: 100%;
-  padding: 4px 8px;
-}
-
-.left,
-.center,
-.right {
-  display: flex;
-  align-items: center;
-}
-
-.center {
-  justify-self: center;
-  color: var(--mauve)
-}
-
-.right {
-  justify-self: end;
 }
 
 .binding-mode,
@@ -61,38 +35,8 @@ body,
   margin-right: 20px;
 }
 
-.workspaces {
-  display: flex;
-  align-items: center;
-}
-
-.workspace {
-  background: var(--surface1);
-  margin-right: 4px;
-  padding: 4px 8px;
-  color: inherit;
-  border: none;
-  border-radius: 2px;
-  cursor: pointer;
-
-  &.displayed {
-    &:after {
-      content: " 󰄛"
-    }
-
-    ;
-  }
-
-  &.focused,
-  &:hover {
-    color: var(--pink);
-  }
-}
-
 .binding-mode,
 .tiling-direction {
-  background: var(--surface1);
-  color: var(--red);
   border-radius: 2px;
   line-height: 1;
   padding: 4px 8px;
@@ -102,26 +46,6 @@ body,
 
 .binding-mode {
   margin-right: 4px;
-}
-
-.keyboard {
-  color: var(--peach);
-}
-
-.memory {
-  color: var(--yellow);
-}
-
-.cpu {
-  color: var(--green);
-}
-
-.weather {
-  color: var(--sapphire);
-}
-
-.cpu .high-usage {
-  color: var(--red);
 }
 
 .battery {

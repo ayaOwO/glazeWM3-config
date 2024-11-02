@@ -3,6 +3,7 @@ import './index.css';
 import { render } from 'solid-js/web';
 import { createStore } from 'solid-js/store';
 import * as zebar from 'zebar';
+import { createSignal, onMount } from 'solid-js';
 
 const providers = zebar.createProviderGroup({
   glazewm: { type: 'glazewm' },
@@ -16,10 +17,31 @@ const providers = zebar.createProviderGroup({
 render(() => <App />, document.getElementById('root')!);
 
 function App() {
-
+  const themes = ['ctp-mocha', 'ctp-macchiato', 'ctp-frappe', 'ctp-latte'];
+  const [theme, setTheme] = createSignal(1);
   const [output, setOutput] = createStore(providers.outputMap);
 
   providers.onOutput(outputMap => setOutput(outputMap));
+
+  // Load theme from localStorage on mount
+  onMount(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setTheme(themes.indexOf(savedTheme));
+      document.documentElement.classList.add(savedTheme);
+    }
+  });
+
+
+
+  const handleThemeSwitcher = () => {
+    const newIndex = (theme() + 1) % themes.length;
+    const newTheme = themes[newIndex];
+    setTheme(newIndex);
+    document.documentElement.classList.remove(...themes);
+    document.documentElement.classList.add(newTheme);
+    localStorage.setItem('theme', newTheme); // Save the theme to localStorage
+  };
 
   // Get icon to show for current network status.
   function getNetworkIcon(networkOutput) {
@@ -147,7 +169,7 @@ function App() {
 
     return (
       <>
-        {icons.map((icon, i) => (
+        {icons.map((icon) => (
           <i class={`nf ${icon}`}></i>
         ))}
       </>
@@ -155,13 +177,13 @@ function App() {
   }
 
   return (
-    <div class="app">
-      <div class="left">
+    <div class="h-full grid items-center grid-cols-3 px-2 py-1 text-ctp-text bg-gradient-to-b from-ctp-base to-ctp-surface0 rounded-lg">
+      <div class="flex items-center justify-self-start">
         {output.glazewm && (
-          <div class="workspaces">
+          <div class="flex items-center bg-ctp-surface1">
             {output.glazewm.currentWorkspaces.map(workspace => (
               <button
-                class={`workspace ${workspace.hasFocus && 'focused'} ${workspace.isDisplayed && 'displayed'}`}
+                class={`hover:cursor-pointer hover:text-ctp-pink mr-1 py-1 px-2 overflow-hidden rounded-lg ${workspace.hasFocus && 'focused text-ctp-pink'} ${workspace.isDisplayed && 'displayed'}`}
                 onClick={() =>
                   output.glazewm.runCommand(
                     `focus --workspace ${workspace.name}`,
@@ -169,28 +191,30 @@ function App() {
                 }
               >
                 {workspace.displayName ?? workspace.name}
+                {workspace.isDisplayed && <i class='nf nf-md-cat'></i>}
                 {getWindowIcon(workspace.children)}
               </button>
             ))}
           </div>
         )}
+        <button onClick={handleThemeSwitcher}>change theme</button>
       </div>
 
-      <div class="center">{output.date?.formatted}</div>
+      <div class="flex items-center justify-self-center text-ctp-mauve">{output.date?.formatted}</div>
 
-      <div class="right">
+      <div class="flex items-center justify-self-end">
         {output.glazewm && (
           <>
             {output.glazewm.bindingModes.map(bindingMode => (
               <button
-                class="binding-mode"
+                class="binding-mode text-ctp-red bg-ctp-surface1"
               >
                 {bindingMode.displayName ?? bindingMode.name}
               </button>
             ))}
 
             <button
-              class={`tiling-direction nf ${output.glazewm.tilingDirection === 'horizontal' ? 'nf-md-swap_horizontal' : 'nf-md-swap_vertical'}`}
+              class={`tiling-direction text-ctp-red bg-ctp-surface1 nf ${output.glazewm.tilingDirection === 'horizontal' ? 'nf-md-swap_horizontal' : 'nf-md-swap_vertical'}`}
               onClick={() =>
                 output.glazewm.runCommand('toggle-tiling-direction')
               }
@@ -199,7 +223,7 @@ function App() {
         )}
 
         {output.keyboard && (
-          <div class="keyboard">
+          <div class="keyboard text-ctp-peach">
             <i class="nf nf-fa-keyboard"></i>
             {output.keyboard.layout.substring(0, output.keyboard.layout.indexOf('-')).toUpperCase()}
           </div>
@@ -213,19 +237,19 @@ function App() {
         )} */}
 
         {output.memory && (
-          <div class="memory">
+          <div class="memory text-ctp-yellow">
             <i class="nf nf-fae-chip"></i>
             {Math.round(output.memory.usage)}%
           </div>
         )}
 
         {output.cpu && (
-          <div class="cpu">
+          <div class="cpu text-ctp-green">
             <i class="nf nf-oct-cpu"></i>
 
             {/* Change the text color if the CPU usage is high. */}
             <span
-              class={output.cpu.usage > 85 ? 'high-usage' : ''}
+              class={output.cpu.usage > 85 ? 'high-usage text-ctp-red' : ''}
             >
               {Math.round(output.cpu.usage)}%
             </span>
@@ -244,7 +268,7 @@ function App() {
         )} */}
 
         {output.weather && (
-          <div class="weather">
+          <div class="weather text-ctp-sapphire">
             {getWeatherIcon(output.weather)}
             {Math.round(output.weather.celsiusTemp)}°C
           </div>
