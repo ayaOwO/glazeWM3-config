@@ -122,6 +122,33 @@
           }
         }
 
+        function flattenWindows(windows) {
+          const falttenedWindows = [];
+          for (let i = 0; i < windows.length; i++) {
+            if (windows[i].type === "split") {
+              falttenedWindows.push(... flattenWindows(windows[i].children));
+            } else {
+              falttenedWindows.push(windows[i]);
+            }
+            
+          }
+
+          return falttenedWindows;
+        }
+
+        function getWindowIcon(windows) {
+          const processToIcon = { "Code": "󰨞", "Spotify": "󰓇", "DiscordPTB": "" };
+          const titles = [];
+          const flattenedWindows = flattenWindows(windows);
+          for (let i = 0; i < flattenedWindows.length; i++) {
+            let processName = flattenedWindows[i].processName;
+            let processIcon = processToIcon[processName];
+            titles.push(processIcon);
+          }
+          
+          return titles.join("");
+        }
+
         return (
           <div className="app">
             <div className="left">
@@ -137,7 +164,8 @@
                       }
                       key={workspace.name}
                     >
-                      {workspace.displayName ?? workspace.name}
+                      {workspace.displayName ?? workspace.name + getWindowIcon(workspace.children)}
+                      {console.log(workspace)}
                     </button>
                   ))}
                 </div>
