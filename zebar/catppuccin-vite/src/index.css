@@ -1,7 +1,18 @@
+/**
+ * Import the Nerdfonts icon font.
+ * Ref https://www.nerdfonts.com/cheat-sheet for a cheatsheet of available Nerdfonts icons.
+ */
+@import './assets/css/webfont.css';
+@import './themes/macchiato.css';
+
+i {
+  margin-right: 7px;
+}
+
 body {
-  color: rgb(255 255 255 / 90%);
-  font-family: ui-monospace, monospace;
-  font-size: 12px;
+  color: var(--text);
+  font-family: FantasqueSansM Nerd Font;
+  font-size: 16px;
   overflow: hidden;
 }
 
@@ -11,14 +22,115 @@ body,
   height: 100%;
 }
 
-.app {
-  text-align: center;
+#root {
+  background: linear-gradient(var(--base), var(--surface0));
+  border-radius: 10px;
 }
 
-.chip {
-  display: inline-block;
+.app {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  height: 100%;
   padding: 4px 8px;
-  border-radius: 4px;
-  background: rgb(84, 66, 220);
+}
+
+.left,
+.center,
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.center {
+  justify-self: center;
+  color: var(--mauve)
+}
+
+.right {
+  justify-self: end;
+}
+
+.binding-mode,
+.tiling-direction,
+.network,
+.keyboard,
+.memory,
+.cpu,
+.battery {
+  margin-right: 20px;
+}
+
+.workspaces {
+  display: flex;
+  align-items: center;
+}
+
+.workspace {
+  background: var(--surface1);
   margin-right: 4px;
+  padding: 4px 8px;
+  color: inherit;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+
+  &.displayed {
+    &:after {
+      content: " 󰄛"
+    }
+
+    ;
+  }
+
+  &.focused,
+  &:hover {
+    color: var(--pink);
+  }
+}
+
+.binding-mode,
+.tiling-direction {
+  background: var(--surface1);
+  color: var(--red);
+  border-radius: 2px;
+  line-height: 1;
+  padding: 4px 8px;
+  border: 0;
+  cursor: pointer;
+}
+
+.binding-mode {
+  margin-right: 4px;
+}
+
+.keyboard {
+  color: var(--peach);
+}
+
+.memory {
+  color: var(--yellow);
+}
+
+.cpu {
+  color: var(--green);
+}
+
+.weather {
+  color: var(--sapphire);
+}
+
+.cpu .high-usage {
+  color: var(--red);
+}
+
+.battery {
+  position: relative;
+}
+
+.battery .charging-icon {
+  position: absolute;
+  font-size: 7px;
+  left: -8px;
+  top: 3px;
 }

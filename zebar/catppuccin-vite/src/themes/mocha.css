@@ -1,0 +1,15 @@
+@import "./catppuccin.css";
+
+:root {
+  --text: var(--ctp-mocha-text);
+  --base: var(--ctp-mocha-base);
+  --surface0: var(--ctp-mocha-surface0);
+  --surface1: var(--ctp-mocha-surface1);
+  --mauve: var(--ctp-mocha-mauve);
+  --pink: var(--ctp-mocha-pink);
+  --red: var(--ctp-mocha-red);
+  --peach: var(--ctp-mocha-peach);
+  --yellow: var(--ctp-mocha-yellow);
+  --green: var(--ctp-mocha-green);
+  --sapphire: var(--ctp-mocha-sapphire);
+}

@@ -1,0 +1,16 @@
+@import "./catppuccin.css";
+/* @import url('https://unpkg.com/@catppuccin/palette/css/catppuccin.css'); */
+
+:root {
+  --text: var(--ctp-macchiato-text);
+  --base: var(--ctp-macchiato-base);
+  --surface0: var(--ctp-macchiato-surface0);
+  --surface1: var(--ctp-macchiato-surface1);
+  --mauve: var(--ctp-macchiato-mauve);
+  --pink: var(--ctp-macchiato-pink);
+  --red: var(--ctp-macchiato-red);
+  --peach: var(--ctp-macchiato-peach);
+  --yellow: var(--ctp-macchiato-yellow);
+  --green: var(--ctp-macchiato-green);
+  --sapphire: var(--ctp-macchiato-sapphire);
+}

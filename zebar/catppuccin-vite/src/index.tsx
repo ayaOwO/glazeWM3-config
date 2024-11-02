@@ -148,7 +148,7 @@ function App() {
     return (
       <>
         {icons.map((icon, i) => (
-          <i key={i} class={`nf ${icon}`}></i>
+          <i class={`nf ${icon}`}></i>
         ))}
       </>
     );
@@ -167,7 +167,6 @@ function App() {
                     `focus --workspace ${workspace.name}`,
                   )
                 }
-                key={workspace.name}
               >
                 {workspace.displayName ?? workspace.name}
                 {getWindowIcon(workspace.children)}
@@ -185,7 +184,6 @@ function App() {
             {output.glazewm.bindingModes.map(bindingMode => (
               <button
                 class="binding-mode"
-                key={bindingMode.name}
               >
                 {bindingMode.displayName ?? bindingMode.name}
               </button>
@@ -207,12 +205,12 @@ function App() {
           </div>
         )}
 
-        {output.network && (
+        {/* {output.network && (
           <div class="network">
             {getNetworkIcon(output.network)}
             {output.network.defaultGateway?.ssid}
           </div>
-        )}
+        )} */}
 
         {output.memory && (
           <div class="memory">
@@ -234,16 +232,16 @@ function App() {
           </div>
         )}
 
-        {output.battery && (
-          <div class="battery">
+        {/* {output.battery && (
+          <div class="battery"> */}
             {/* Show icon for whether battery is charging. */}
-            {output.battery.isCharging && (
+            {/* {output.battery.isCharging && (
               <i class="nf nf-md-power_plug charging-icon"></i>
             )}
             {getBatteryIcon(output.battery)}
             {Math.round(output.battery.chargePercent)}%
           </div>
-        )}
+        )} */}
 
         {output.weather && (
           <div class="weather">
