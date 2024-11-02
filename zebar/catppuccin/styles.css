@@ -3,7 +3,7 @@
  * Ref https://www.nerdfonts.com/cheat-sheet for a cheatsheet of available Nerdfonts icons.
  */
 @import 'https://www.nerdfonts.com/assets/css/webfont.css';
-@import './themes/latte.css';
+@import './themes/macchiato.css';
 
 i {
   margin-right: 7px;
@@ -54,6 +54,7 @@ body,
 .binding-mode,
 .tiling-direction,
 .network,
+.keyboard,
 .memory,
 .cpu,
 .battery {
@@ -103,7 +104,7 @@ body,
   margin-right: 4px;
 }
 
-.network {
+.keyboard {
   color: var(--peach);
 }
 
