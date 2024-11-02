@@ -137,16 +137,49 @@
         }
 
         function getWindowIcon(windows) {
-          const processToIcon = { "Code": "󰨞", "Spotify": "󰓇", "DiscordPTB": "" };
-          const titles = [];
+          const processToIcon = {
+              "Code": "󰨞",
+              "Spotify": "󰓇",
+              "DiscordPTB": "󰙯",
+              "firefox": "󰈹",
+              "ApplicationFrameHost": "󰖣",
+              "msedgewebview2": "󰇩",
+              "msedge": "󰇩",
+              "explorer": "󰉋",
+              "WindowsTerminal": "",
+              "default": "󰣆"
+            };
+          const processToClassIcon = {
+              "Code": "nf-md-microsoft_visual_studio_code",
+              "Spotify": "nf-md-spotify",
+              "DiscordPTB": "nf-md-discord",
+              "firefox": "nf-md-firefox",
+              "ApplicationFrameHost": "nf-md-whatsapp",
+              "msedgewebview2": "nf-md-microsoft_edge",
+              "msedge": "nf-md-microsoft_edge",
+              "explorer": "nf-md-folder",
+              "WindowsTerminal": "nf-cod-terminal",
+              "default": "nf-md-application"
+            };
+          const icons = [];
           const flattenedWindows = flattenWindows(windows);
           for (let i = 0; i < flattenedWindows.length; i++) {
             let processName = flattenedWindows[i].processName;
-            let processIcon = processToIcon[processName];
-            titles.push(processIcon);
+            let processIcon = processToClassIcon[processName];
+            if (processIcon === undefined) {
+              console.log(`Icon not found for ${processName} using default icon`);
+              processIcon = processToClassIcon["default"];
+            }
+            icons.push(processIcon);
           }
           
-          return titles.join("");
+          return (
+            <>
+              {icons.map((icon, i) => (
+                <i key={i} className={`nf ${icon}`}></i>
+              ))}
+            </>
+          );
         }
 
         return (
@@ -164,8 +197,8 @@
                       }
                       key={workspace.name}
                     >
-                      {workspace.displayName ?? workspace.name + getWindowIcon(workspace.children)}
-                      {console.log(workspace)}
+                      {workspace.displayName ?? workspace.name}
+                      {getWindowIcon(workspace.children)}
                     </button>
                   ))}
                 </div>
