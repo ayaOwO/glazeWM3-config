@@ -180,10 +180,10 @@ function App() {
     <div class="h-full grid items-center grid-cols-3 px-2 py-1 text-ctp-text bg-gradient-to-b from-ctp-base to-ctp-surface0 rounded-lg">
       <div class="flex items-center justify-self-start">
         {output.glazewm && (
-          <div class="flex items-center bg-ctp-surface1">
+          <div class="flex items-center">
             {output.glazewm.currentWorkspaces.map(workspace => (
               <button
-                class={`hover:cursor-pointer hover:text-ctp-pink mr-1 py-1 px-2 overflow-hidden rounded-lg ${workspace.hasFocus && 'focused text-ctp-pink'} ${workspace.isDisplayed && 'displayed'}`}
+                class={`hover:cursor-pointer bg-ctp-surface1 hover:text-ctp-pink mr-1 py-1 px-2 overflow-hidden rounded-md ${workspace.hasFocus && 'focused text-ctp-pink'} ${workspace.isDisplayed && 'displayed'}`}
                 onClick={() =>
                   output.glazewm.runCommand(
                     `focus --workspace ${workspace.name}`,
