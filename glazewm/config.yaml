@@ -43,7 +43,7 @@ gaps:
 
   # Gap between windows and the screen edge.
   outer_gap:
-    top: '58px'
+    top: '0px'
     right: '8px'
     bottom: '8px'
     left: '8px'
@@ -99,10 +99,10 @@ window_behavior:
     fullscreen:
       # Maximize the window if possible. If the window doesn't have a
       # maximize button, then it'll be fullscreen'ed normally instead.
-      maximized: false
+      maximized: true
 
       # Whether to show fullscreen windows as always on top.
-      shown_on_top: false
+      shown_on_top: true
 
 workspaces:
   - name: '1'

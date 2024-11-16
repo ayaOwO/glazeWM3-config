@@ -177,7 +177,7 @@ function App() {
   }
 
   return (
-    <div class="h-full grid items-center grid-cols-3 px-2 py-1 text-ctp-text bg-gradient-to-b from-ctp-base to-ctp-surface0 rounded-lg">
+    <div class="my-2 mx-auto w-[99%] h-10 grid items-center grid-cols-3 px-2 py-1 text-ctp-text bg-gradient-to-b from-ctp-base to-ctp-surface0 rounded-lg">
       <div class="flex items-center justify-self-start">
         {output.glazewm && (
           <div class="flex items-center">
