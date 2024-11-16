@@ -201,8 +201,8 @@ function App() {
 
         {output.media && (
           <button class="line-clamp-1 media text-ctp-sky" onclick={handleThemeSwitcher}>
+            <i class={output.media.session.isPlaying ? "nf-md-play" : "nf-md-pause"} />
             {output.media.session.title + " | " + output.media.session.artist}
-            <i class={`ml-1 ${output.media.session.isPlaying ? "nf-md-play" : "nf-md-pause"}`} />
           </button>
         )}
       </div>
