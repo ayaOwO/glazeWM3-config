@@ -30,6 +30,9 @@ body,
 .network,
 .keyboard,
 .memory,
+.weather,
+.media,
+.workspaces,
 .cpu,
 .battery {
   margin-right: 20px;

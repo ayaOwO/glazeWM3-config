@@ -12,6 +12,7 @@ const providers = zebar.createProviderGroup({
   memory: { type: 'memory' },
   weather: { type: 'weather' },
   keyboard: { type: 'keyboard', refreshInterval: 300 },
+  media: { type: 'media' },
 });
 
 render(() => <App />, document.getElementById('root')!);
@@ -177,13 +178,13 @@ function App() {
   }
 
   return (
-    <div class="my-2 mx-auto w-[99%] h-10 grid items-center grid-cols-3 px-2 py-1 text-ctp-text bg-gradient-to-b from-ctp-base to-ctp-surface0 rounded-lg">
+    <div class="line-clamp-1 my-2 mx-auto w-[99%] h-10 grid items-center grid-cols-3 px-2 py-1 text-ctp-text bg-gradient-to-b from-ctp-base to-ctp-surface0 rounded-lg">
       <div class="flex items-center justify-self-start">
         {output.glazewm && (
-          <div class="flex items-center">
+          <div class="workspaces flex items-center">
             {output.glazewm.currentWorkspaces.map(workspace => (
               <button
-                class={`hover:cursor-pointer bg-ctp-surface1 hover:text-ctp-pink mr-1 py-1 px-2 overflow-hidden rounded-md ${workspace.hasFocus && 'focused text-ctp-pink'} ${workspace.isDisplayed && 'displayed'}`}
+                class={`hover:cursor-pointer bg-ctp-surface1 hover:text-ctp-pink mr-1 py-1 px-2  rounded-md ${workspace.hasFocus && 'focused text-ctp-pink'} ${workspace.isDisplayed && 'displayed'}`}
                 onClick={() =>
                   output.glazewm.runCommand(
                     `focus --workspace ${workspace.name}`,
@@ -196,6 +197,13 @@ function App() {
               </button>
             ))}
           </div>
+        )}
+
+        {output.media && (
+          <button class="line-clamp-1 media text-ctp-sky" onclick={handleThemeSwitcher}>
+            {output.media.session.title + " | " + output.media.session.artist}
+            <i class={`ml-1 ${output.media.session.isPlaying ? "nf-md-play" : "nf-md-pause"}`} />
+          </button>
         )}
       </div>
 
@@ -257,8 +265,8 @@ function App() {
 
         {/* {output.battery && (
           <div class="battery"> */}
-            {/* Show icon for whether battery is charging. */}
-            {/* {output.battery.isCharging && (
+        {/* Show icon for whether battery is charging. */}
+        {/* {output.battery.isCharging && (
               <i class="nf nf-md-power_plug charging-icon"></i>
             )}
             {getBatteryIcon(output.battery)}
@@ -272,6 +280,7 @@ function App() {
             {Math.round(output.weather.celsiusTemp)}°C
           </button>
         )}
+
       </div>
     </div>
   );
