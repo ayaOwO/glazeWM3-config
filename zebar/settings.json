@@ -3,7 +3,7 @@
   "startupConfigs": [
     {
       "path": "catppuccin-vite\\catppuccin-glazewm-vite.zebar.json",
-      "preset": "default"
+      "preset": "anchor"
     }
   ]
 }
