@@ -28,11 +28,16 @@ general:
     trigger: 'window_focus'
 
   # How windows should be hidden when switching workspaces.
-  # - 'cloak': Recommended. Hides windows with no animation and keeps them
-  # visible in the taskbar.
+  # - 'cloak': Recommended. Hides windows with no animation.
   # - 'hide': Legacy method (v3.5 and earlier) that has a brief animation,
   # but has stability issues with some apps.
   hide_method: 'cloak'
+
+  # Affects which windows get shown in the native Windows taskbar. Has no
+  # effect if `hide_method: 'hide'`.
+  # - 'true': Show all windows (regardless of workspace).
+  # - 'false': Only show windows from the currently shown workspaces.
+  show_all_in_taskbar: false
 
 gaps:
   # Whether to scale the gaps with the DPI of the monitor.
@@ -158,13 +163,6 @@ binding_modes:
       - commands: ['wm-disable-binding-mode --name resize']
         bindings: ['escape', 'enter']
 
-  # When enabled, all keybindings are disabled except for alt+shift+p which
-  # returns to default keybindings.
-  # - name: 'pause'
-  #   keybindings:
-  #     - commands: ['wm-disable-binding-mode --name pause']
-  #       bindings: ['alt+shift+p']
-
 keybindings:
   # Shift focus in a given direction.
   - commands: ['focus --direction left']
@@ -202,9 +200,10 @@ keybindings:
   - commands: ['wm-enable-binding-mode --name resize']
     bindings: ['alt+r']
 
-  # Disables all keybindings until alt+shift+p is pressed again.
-  # - commands: ['wm-enable-binding-mode --name pause']
-  #   bindings: ['alt+shift+p']
+  # Disables window management and all other keybindings until alt+shift+p
+  # is pressed again.
+  - commands: ['wm-toggle-pause']
+    bindings: ['alt+shift+p']
 
   # Change tiling direction. This determines where new tiling windows will
   # be inserted.
@@ -247,16 +246,16 @@ keybindings:
   - commands: ['wm-redraw']
     bindings: ['alt+shift+w']
 
-  # Launch CMD terminal. Alternatively, use `shell-exec --command wt` or
-  # `shell-exec --command %ProgramFiles%/Git/git-bash.exe` to start Windows
+  # Launch CMD terminal. Alternatively, use `shell-exec wt` or
+  # `shell-exec %ProgramFiles%/Git/git-bash.exe` to start Windows
   # Terminal and Git Bash respectively.
   - commands: ['shell-exec cmd']
     bindings: ['alt+enter']
 
-  # Focus the next/previous workspace defined in `workspaces` config.
-  - commands: ['focus --next-workspace']
+  # Focus the next/previous active workspace defined in `workspaces` config.
+  - commands: ['focus --next-active-workspace']
     bindings: ['alt+s']
-  - commands: ['focus --prev-workspace']
+  - commands: ['focus --prev-active-workspace']
     bindings: ['alt+a']
 
   # Focus the workspace that last had focus.
